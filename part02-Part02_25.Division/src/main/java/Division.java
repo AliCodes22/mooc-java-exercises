@@ -11,5 +11,9 @@ public class Division {
         // division(3, 5);
     }
 
+    public static void divisibleByThreeInRange(int beginning, int end) {
+        
+    }
+
     // implement the method here
 }
