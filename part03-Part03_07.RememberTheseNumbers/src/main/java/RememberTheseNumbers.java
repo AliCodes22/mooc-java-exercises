@@ -8,14 +8,22 @@ public class RememberTheseNumbers {
         Scanner scanner = new Scanner(System.in);
 
         ArrayList<Integer> numbers = new ArrayList<>();
-        while (true) {
-            int luku = Integer.valueOf(scanner.nextLine());
-            if (luku == -1) {
+
+        while(true) {
+            System.out.println("Enter a number:");
+            int num = Integer.valueOf(scanner.nextLine());
+
+            if(num == -1) {
                 break;
             }
 
-            numbers.add(luku);
+            numbers.add(num);
         }
+
+        for(int i = 0; i <= numbers.size() - 1; i++) {
+            System.out.println(numbers.get(i));
+        }
+
 
     }
 }
