@@ -7,18 +7,26 @@ public class IndexOf {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ArrayList<Integer> list = new ArrayList<>();
-        while (true) {
-            int input = Integer.valueOf(scanner.nextLine());
-            if (input == -1) {
+      ArrayList<Integer> numbers = new ArrayList<>();
+
+        while(true) {
+            int number = Integer.valueOf(scanner.nextLine());
+            
+            if(number == -1) {
                 break;
             }
 
-            list.add(input);
+            numbers.add(number);
         }
 
-        System.out.println("");
+        System.out.println("Search for?");
+        int searchNumber = Integer.valueOf(scanner.nextLine());
+        
+        for(int i = 0; i < numbers.size(); i++) {
+            if(numbers.get(i) == searchNumber ) {
+                System.out.println(searchNumber + " is at index " + i);
+            }
+        }
 
-        // implement here finding the indices of a number
     }
 }
