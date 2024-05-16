@@ -1,6 +1,7 @@
 
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class IndexWasNotFound {
 
@@ -20,6 +21,20 @@ public class IndexWasNotFound {
         int searching = Integer.valueOf(scanner.nextLine());
 
         // Implement the search functionality here
+
+        boolean isFound = false;
+
+        for(int i  = 0; i < array.length; i++) {
+            if(array[i] == searching) {
+                System.out.println(searching + " is at index " + i + ".");
+                isFound = true;
+                break;
+            } 
+        }
+
+        if(!isFound) {
+            System.out.println(searching + " was not found.");
+        }  
     }
 
 }

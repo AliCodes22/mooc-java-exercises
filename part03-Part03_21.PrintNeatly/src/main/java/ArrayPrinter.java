@@ -1,4 +1,3 @@
-
 public class ArrayPrinter {
 
     public static void main(String[] args) {
@@ -9,5 +8,15 @@ public class ArrayPrinter {
 
     public static void printNeatly(int[] array) {
         // Write some code in here
+        String numbers = "";
+
+        for(int i = 0; i < array.length; i++) {
+            numbers += array[i];
+            if(i != array.length - 1) {
+                numbers += ", ";
+            }
+        }
+
+        System.out.println(numbers);
     }
 }
