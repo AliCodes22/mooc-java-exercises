@@ -11,11 +11,15 @@ public class MainProgram {
 
         paulsCard.eatHeartily();
         mattsCard.eatAffordably();
-        paulsCard.toString();
-        mattsCard.toString();
+        System.out.println("Paul" + paulsCard.toString());
+        System.out.println("Matt" + mattsCard.toString());
+
 
         paulsCard.addMoney(20.0);
         mattsCard.eatHeartily();
+
+        System.out.println("Paul" + paulsCard.toString());
+        System.out.println("Matt" + mattsCard.toString());
 
         paulsCard.toString();
         mattsCard.toString();
@@ -25,7 +29,7 @@ public class MainProgram {
 
         mattsCard.addMoney(50.0);
 
-        paulsCard.toString();
-        mattsCard.toString();
+        System.out.println("Paul" + paulsCard.toString());
+        System.out.println("Matt" + mattsCard.toString());
     }
 }
