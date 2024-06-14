@@ -9,7 +9,7 @@ public class SportStatistics {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("File:");
-        String fileName = scan.nextLine().toUpperCase();
+        String fileName = scan.nextLine();
         System.out.println("Team:");
         String teamName = scan.nextLine();
 
@@ -29,20 +29,22 @@ public class SportStatistics {
                 Boolean isVisitingTeam = parts[1].equals(teamName);
 
 
+                // check condition only if the team is playing on either the home or visiting side
                 if(parts[0].equals(teamName) || parts[1].equals(teamName)) {
-                    gamesPlayed++;
-                }
+                    gamesPlayed++;    
+                
+                    if(isHomeTeam && homeTeamPoints > visitingTeamPoints) {
+                        wins++;
 
-              if(isHomeTeam && homeTeamPoints > visitingTeamPoints) {
-    wins++;
-} else if (isVisitingTeam && visitingTeamPoints > homeTeamPoints) {
-    wins++;
-} else {
-    losses++;
-}
+                    } else if(isVisitingTeam && visitingTeamPoints > homeTeamPoints) {
+                        wins++;
+                    } else {
+                        losses++;
+                    }
+               
+            } 
 
-            }
-
+      }
         } catch (Exception error) {
             System.out.println(error.getMessage());
         }
@@ -51,3 +53,4 @@ public class SportStatistics {
         System.out.println("Losses: " + losses );
     }
 }
+
