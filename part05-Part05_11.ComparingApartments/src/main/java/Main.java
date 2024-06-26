@@ -8,4 +8,6 @@ public class Main {
         Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
   
     }
+
+   
 }
