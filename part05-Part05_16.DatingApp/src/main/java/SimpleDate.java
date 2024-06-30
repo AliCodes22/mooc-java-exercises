@@ -33,4 +33,46 @@ public class SimpleDate {
         return false;
     }
 
+    public void advance() {
+        if(this.day <= 30) {
+            this.day++;
+        } 
+
+        if(this.day > 30) {
+            if(this.month <= 12) {
+                this.month++;
+                this.day = 1;
+            }
+        }
+
+        if(this.month > 12) {
+            this.year++;
+        }
+    }
+
+    public void advance(int howManyDays) {
+        if(this.day <= 30) {
+            this.day += howManyDays;
+        }
+
+
+        if(this.day > 30) {
+            if(this.month <= 12) {
+                this.month++;
+            }
+        }
+
+        if(this.month > 12) {
+            this.year++;
+             this.day = 1;
+        }
+    }
+
+    public SimpleDate afterNumberOfDays(int days) {
+        
+        SimpleDate newDate = new SimpleDate(days, this.month, this.year);
+        return newDate;
+
+    }
+
 }
