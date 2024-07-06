@@ -23,19 +23,25 @@ public class SimpleCollection {
 
     @Override
     public String toString() {
+       
+
         if(this.elements.isEmpty()) {
            return "The collection " + this.name + " is empty.";
         } else if(this.elements.size() == 1) {
-            return "The collection " + this.name + " has 1 " + "element:" + this.elements;
+           return "The collection " + this.name + " has 1 element:\n" + this.elements.get(0);
         } else {
-            return "The collection " + "this.name" + " has " + this.elements.size() + " elements."; 
+            String output = "The collection " + this.name + " has " + this.elements.size() + " elements:\n"; 
             for(String element: this.elements) {
-            return element;
-         }
+                output += element + "\n";
+            }
 
+            return output.trim();
         }
 
        
+
     }
+
+    
     
 }
