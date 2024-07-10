@@ -9,9 +9,7 @@ public class Suitcase {
         this.maxWeight = maxWeight;
     }
 
-    public void addItem(Item item) {
-        this.items.add(item);
-    }
+   
 
     public int totalWeight() {
         int weight = 0;
@@ -23,6 +21,39 @@ public class Suitcase {
         return weight;
     }
 
+    public boolean isFull(Item item) {
+        return this.totalWeight() == this.maxWeight;    
+    }
+    
+
+     public void addItem(Item item) {
+
+        if(isFull(item))
+        this.items.add(item);
+    }
+
+    public void printItems() {
+        for(Item item: this.items) {
+            System.out.println(item.getName());
+        } 
+    }
+
+    public Item heaviestItem() {
+        Item heaviest = new Item(null, 0);
+
+        if(this.items.isEmpty()) {
+            return null;
+        }
+
+        for(Item item: this.items) {
+            if(item.getWeight() > heaviest.getWeight()) {
+                heaviest = item;
+            }
+        }
+
+        return heaviest;
+    }
+
     @Override
     public String toString() {
         if(this.items.isEmpty()) {
@@ -30,10 +61,10 @@ public class Suitcase {
         }
 
         if(this.items.size() == 1) {
-            return this.items.size() + " item " + "(" + this.totalWeight() + ")";
+            return this.items.size() + " item " + "(" + this.totalWeight() + "kg)" ;
         }
 
-        return this.items.size() + " items" + "(" + this.totalWeight() + " kg)";
+        return this.items.size() + " items " + "(" + this.totalWeight() + "kg)";
     }
 
 }
