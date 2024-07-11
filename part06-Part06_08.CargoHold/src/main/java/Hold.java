@@ -10,17 +10,30 @@ public class Hold {
     }
 
     public void addSuitcase(Suitcase suitcase) {
-        this.suitcases.add(suitcase);
+        if(this.getWeight() + suitcase.totalWeight() <= maxWeight) {
+            this.suitcases.add(suitcase);
+        }
+    }
+
+    public int getWeight() {
+        int weight = 0;
+
+        for(Suitcase suitcase: this.suitcases) {
+            weight += suitcase.totalWeight();
+        }
+
+        return weight;
     }
 
     public String toString() {
-        return "";
+        return this.suitcases.size() + " suitcases (" + this.getWeight() + "kg)";
     }
 
     public void printItems() {
         System.out.println("The suitcases in the hold contain the following items:");
+        
         for(Suitcase suitcase: this.suitcases) {
-            System.out.println(suitcase.toString());
+            suitcase.printItems();;
         }
     }
 

@@ -21,21 +21,21 @@ public class Suitcase {
         return weight;
     }
 
-    public boolean isFull(Item item) {
-        return this.totalWeight() == this.maxWeight;    
-    }
+  
     
 
      public void addItem(Item item) {
-
-        if(isFull(item))
-        this.items.add(item);
+        
+        if(this.totalWeight() + item.getWeight() <= this.maxWeight) {
+            this.items.add(item);
+        }
+    
     }
 
     public void printItems() {
-        for(Item item: this.items) {
-            System.out.println(item.getName());
-        } 
+       for(Item item: this.items) { 
+        System.out.println(item.toString());
+       }
     }
 
     public Item heaviestItem() {
@@ -62,9 +62,10 @@ public class Suitcase {
 
         if(this.items.size() == 1) {
             return this.items.size() + " item " + "(" + this.totalWeight() + "kg)" ;
-        }
+        } 
 
         return this.items.size() + " items " + "(" + this.totalWeight() + "kg)";
+
     }
 
 }
