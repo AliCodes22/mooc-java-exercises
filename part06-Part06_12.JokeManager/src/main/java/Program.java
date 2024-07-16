@@ -8,7 +8,7 @@ public class Program {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> jokes = new ArrayList<>();
+        JokeManager jokes = new JokeManager();
         System.out.println("What a joke!");
         while (true) {
         System.out.println("Commands:");
@@ -23,21 +23,19 @@ public class Program {
         if (command.equals("1")) {
         System.out.println("Write the joke to be added:");
         String joke = scanner.nextLine();
-        jokes.add(joke);
+        jokes.addJoke(joke);
         } else if (command.equals("2")) {
         System.out.println("Drawing a joke.");
         if (jokes.isEmpty()) {
         System.out.println("Jokes are in short supply.");
         } else {
         Random draw = new Random();
-        int index = rand.nextInt(jokes.size());
-        System.out.println(jokes.get(index));
+        int index = draw.nextInt(jokes.getJokesListLength());
+        System.out.println(jokes.getJoke(index));
         }
         } else if (command.equals("3")) {
         System.out.println("Printing the jokes.");
-        for (String joke : jokes) {
-        System.out.println(joke);
-        }
+        jokes.printJokes();;
         }
         }
     }
