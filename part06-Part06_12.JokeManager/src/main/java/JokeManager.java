@@ -14,7 +14,7 @@ public class JokeManager {
 
     public String drawJoke() {
         if(this.jokes.isEmpty()) {
-            return "Jokes are in short supply";
+            return "Jokes are in short supply.";
         }
 
         Random random = new Random();
