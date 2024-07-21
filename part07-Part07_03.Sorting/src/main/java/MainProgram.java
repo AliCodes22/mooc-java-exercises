@@ -69,13 +69,14 @@ public class MainProgram {
 
     public static void sort(int[] array) {
 
-       for(int i = 0; i < array.length; i++) {
-            if(i == 0) {
-                int smallestIndex = indexOfSmallest(array);
-                swap(array, 0, smallestIndex);
-                System.out.println(Arrays.toString(array));
-            }
-       }
+       for (int i = 0; i < array.length; i++) {
+        // Find the index of the smallest element in the subarray starting from i
+        int smallestIndex = indexOfSmallestFrom(array, i);
+        // Swap the current element with the smallest element found
+        swap(array, i, smallestIndex);
+        // Print the array after each swap to track the sorting process
+        System.out.println(Arrays.toString(array));
+    }
     }
 
 
