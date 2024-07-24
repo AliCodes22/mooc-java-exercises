@@ -1,6 +1,9 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
+import java.util.Comparator;
 
 public class Searching {
 
@@ -57,7 +60,30 @@ public class Searching {
     }
 
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
-        return -1;
+    int startIndex = 0;
+    int lastIndex = books.size() - 1;
+
+    while (startIndex <= lastIndex) { // Continue while there is a range to search
+        int middleIndex = (startIndex + lastIndex) / 2; // Calculate the middle index
+        
+        // Compare the middle element's ID with the searchedId
+        if (books.get(middleIndex).getId() == searchedId) {
+            return middleIndex; // Return the index if found
+        }
+        
+        // If the searchedId is smaller, search the left half
+        if (books.get(middleIndex).getId() > searchedId) {
+            lastIndex = middleIndex - 1;
+        } else { // If the searchedId is larger, search the right half
+            startIndex = middleIndex + 1;
+        }
     }
+    
+    return -1; // Return -1 if the searchedId is not found
+}
+
+    
+
+
 }
 
