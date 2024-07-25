@@ -8,5 +8,10 @@ public class Main {
         
         // Write your program here -- consider breaking the program into 
         // multiple classes.
+       Average classAverage = new Average();
+       classAverage.start();
+       classAverage.printResults();;
+        
+
     }
 }
